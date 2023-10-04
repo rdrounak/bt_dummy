@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Header from './Header'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
@@ -7,7 +7,14 @@ import NotFound from './NotFound'
 import Contact from './Contact'
 function App() {
   return (
-    <>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateRows: 'auto 1fr',
+        height: '100vh',
+        overflowY: 'hidden',
+      }}
+    >
       <Header />
       <Routes>
         <Route>
@@ -17,7 +24,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </div>
   )
 }
 
